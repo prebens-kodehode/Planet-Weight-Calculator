@@ -1,0 +1,8 @@
+:root {
+  --main-bg-color: #205d5e;
+}
+
+body {
+    background: url("/Images/star_background.webp");
+    color: #f1f1f1;
+}
