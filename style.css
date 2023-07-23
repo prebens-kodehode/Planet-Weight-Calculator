@@ -1,8 +1,30 @@
 :root {
-  --main-bg-color: #205d5e;
+  --card-bg-color: #366869;
 }
 
 body {
-    background: url("/Images/star_background.webp");
-    color: #f1f1f1;
+  background: url("/Images/star_background.webp");
+  color: #f1f1f1;
+  font-family: "Orbitron", sans-serif;
+}
+
+p {
+  letter-spacing: 0.05rem;
+}
+
+main img {
+  max-width: 15rem;
+  border-radius: 0.5rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--card-bg-color);
+  max-width: 18rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  margin: 0.5rem;
 }
