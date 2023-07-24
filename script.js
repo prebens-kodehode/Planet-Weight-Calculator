@@ -8,11 +8,15 @@ weightOutput.forEach((h3) => {
 
 function calcWeight() {
   weightOutput.forEach((h3) => {
-    const gravityMultiplier = h3.getAttribute("data-gravity");
+    if (Number(weightOutput.value) > 0) {
+      h3.textContent = `Please Enter a Valid Number`;
+    } else {
+      const gravityMultiplier = h3.getAttribute("data-gravity");
 
-    const planetWeight = weightInput.value * gravityMultiplier;
+      const planetWeight = weightInput.value * gravityMultiplier;
 
-    h3.textContent = `${planetWeight.toFixed(2)}`;
+      h3.textContent = `${planetWeight.toFixed(2)}`;
+    }
   });
 }
 
