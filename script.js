@@ -6,7 +6,7 @@ weightOutput.forEach((h3) => {
   h3.textContent = `0.00`;
 });
 
-calcBtn.addEventListener("click", function calcWeight() {
+function calcWeight() {
   weightOutput.forEach((h3) => {
     const gravityMultiplier = h3.getAttribute("data-gravity");
 
@@ -14,4 +14,11 @@ calcBtn.addEventListener("click", function calcWeight() {
 
     h3.textContent = `${planetWeight.toFixed(2)}`;
   });
+}
+
+calcBtn.addEventListener("click", calcWeight);
+weightInput.addEventListener("keypress", function (event) {
+  if (event.key === "Enter") {
+    calcWeight();
+  }
 });
