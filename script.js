@@ -8,8 +8,8 @@ weightOutput.forEach((h3) => {
 
 function calcWeight() {
   weightOutput.forEach((h3) => {
-    if (Number(weightOutput.value) > 0) {
-      h3.textContent = `Please Enter a Valid Number`;
+    if (weightInput.value < 0) {
+      h3.textContent = `Enter Valid Number`;
     } else {
       const gravityMultiplier = h3.getAttribute("data-gravity");
 
