@@ -11,15 +11,10 @@ body {
   max-width: 100svw;
 }
 
-p {
-  letter-spacing: 0.05rem;
-}
 
+/* header section */
 header {
-  display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
   text-align: center;
   margin: 2rem 0 5rem 0;
   text-shadow: 0 0 0.7rem #b1b1b1;
@@ -54,7 +49,6 @@ button {
   font-family: "Orbitron", sans-serif;
   font-weight: 600;
   text-align: center;
-  letter-spacing: 0.05rem;
   border: none;
   border-radius: 0.3rem;
   cursor: pointer;
@@ -69,6 +63,8 @@ button:active {
   transform: scale(0.95);
 }
 
+
+/* main section */
 main img {
   max-width: 15rem;
   border-radius: 0.5rem;
@@ -84,10 +80,7 @@ main {
 }
 
 .card {
-  display: flex;
-  flex-direction: column;
   justify-content: start;
-  align-items: center;
   box-sizing: border-box;
   background: var(--card-bg-color);
   width: 16rem;
@@ -101,4 +94,17 @@ main {
   text-align: center;
   width: 12rem;
   margin: 0;
+}
+
+h3,
+p,
+button {
+  letter-spacing: 0.05rem;
+}
+
+header,
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
