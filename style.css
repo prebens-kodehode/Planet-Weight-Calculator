@@ -17,6 +17,7 @@ header {
   justify-content: center;
   margin: 2rem 0 5rem 0;
   text-shadow: 0 0 0.7rem #b1b1b1;
+  height: 100svh;
 }
 
 label {

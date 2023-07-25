@@ -28,6 +28,7 @@ function calcWeight() {
     const planetWeight = weightInput.value * gravityMultiplier;
 
     h3.textContent = `${planetWeight.toFixed(2)}`;
+    scrollToCards();
   });
 }
 
@@ -40,3 +41,12 @@ weightInput.addEventListener("keypress", function (event) {
     calcWeight();
   }
 });
+
+function scrollToCards() {
+  const element = document.querySelector(".card");
+  element.scrollIntoView({
+    block: "start",
+    behavior: "smooth",
+    inline: "start",
+  });
+}
