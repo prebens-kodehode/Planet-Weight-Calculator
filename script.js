@@ -16,6 +16,10 @@ weightInput.oninput = function () {
   } else if (this.value > max) {
     this.value = max;
   }
+
+  if (this.value.length > this.maxLength) {
+    this.value = this.value.slice(0, this.maxLength);
+  }
 };
 
 // calculates the weights
