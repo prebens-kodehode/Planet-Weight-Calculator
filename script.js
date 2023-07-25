@@ -46,7 +46,7 @@ weightInput.addEventListener("keypress", function (event) {
 });
 
 function scrollToCards() {
-  const element = document.querySelector(".card");
+  const element = document.querySelector("main");
   element.scrollIntoView({
     block: "start",
     behavior: "smooth",
