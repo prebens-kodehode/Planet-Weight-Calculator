@@ -28,8 +28,15 @@
     <div id="wrapper">
       <header>
         <h1>How much would you weigh on other planets?</h1>
-        <h3>Enter Your Weight Here</h3>
-        <input type="number" id="input-el" placeholder="0" />
+        <label for="weight-input">Enter Your Weight Here</label>
+        <input
+          type="number"
+          id="input-el"
+          min="0"
+          max="999999"
+          name="weight-input"
+          placeholder="0"
+        />
         <button>Calculate</button>
       </header>
 

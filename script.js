@@ -6,21 +6,35 @@ weightOutput.forEach((h3) => {
   h3.textContent = `0.00`;
 });
 
+// prevents user to input number outside the set min/max
+weightInput.oninput = function () {
+  const max = parseInt(this.max);
+  const min = parseInt(this.min);
+
+  if (this.value.startsWith(0)) {
+    this.value = "";
+  } else if (this.value < min) {
+    this.value = min;
+  } else if (this.value > max) {
+    this.value = max;
+  }
+};
+
+// calculates the weights
 function calcWeight() {
   weightOutput.forEach((h3) => {
-    if (weightInput.value < 0) {
-      h3.textContent = `Enter a Valid Number`;
-    } else {
-      const gravityMultiplier = h3.getAttribute("data-gravity");
+    const gravityMultiplier = h3.getAttribute("data-gravity");
 
-      const planetWeight = weightInput.value * gravityMultiplier;
+    const planetWeight = weightInput.value * gravityMultiplier;
 
-      h3.textContent = `${planetWeight.toFixed(2)}`;
-    }
+    h3.textContent = `${planetWeight.toFixed(2)}`;
   });
 }
 
+// runs calcWeight when button
 calcBtn.addEventListener("click", calcWeight);
+
+// runs calcWeight when Enter is pressed when input field is active
 weightInput.addEventListener("keypress", function (event) {
   if (event.key === "Enter") {
     calcWeight();
