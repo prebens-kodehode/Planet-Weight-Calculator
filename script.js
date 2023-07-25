@@ -11,9 +11,7 @@ weightInput.oninput = function () {
   const max = parseInt(this.max);
   const min = parseInt(this.min);
 
-  if (this.value.startsWith(0)) {
-    this.value = "";
-  } else if (this.value < min) {
+  if (this.value < min) {
     this.value = min;
   } else if (this.value > max) {
     this.value = max;
