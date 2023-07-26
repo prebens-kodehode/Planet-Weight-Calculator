@@ -4,7 +4,7 @@ const mainWrapper = document.querySelector("main");
 
 const planets = [
   { name: "the Sun", gravity: 27.01, imgName: "sun" },
-  { name: "Mercury", gravity: 0.38, imgName: "mercury" },
+  { name: "Mercury", gravity: 0.377, imgName: "mercury" },
   { name: "Venus", gravity: 0.91, imgName: "venus" },
   { name: "Earth", gravity: 1, imgName: "earth" },
   { name: "the Moon", gravity: 0.166, imgName: "moon" },
@@ -48,7 +48,7 @@ weightInput.oninput = function () {
     this.value = this.max;
   }
 
-  // prevents input to exceed maxlength
+  // prevents input to exceed maxlength (somehow just setting it in the html doesn't work)
   if (this.value.length > this.maxLength) {
     this.value = this.value.slice(0, this.maxLength);
   }
@@ -56,13 +56,14 @@ weightInput.oninput = function () {
 
 // calculates the weights
 function calcWeight() {
-  const weightOutput = document.querySelectorAll("h3[data-gravity]");
+  document.querySelectorAll("h3").forEach((h3) => {
+    h3.textContent = (
+      weightInput.value * h3.getAttribute("data-gravity")
+    ).toFixed(2);
 
-  weightOutput.forEach((h3) => {
-    const gravityMultiplier = h3.getAttribute("data-gravity");
-    h3.textContent = (weightInput.value * gravityMultiplier).toFixed(2);
-
+    // removes focus from input field
     weightInput.blur();
+
     scrollToCards();
   });
 }
@@ -70,13 +71,14 @@ function calcWeight() {
 // runs calcWeight when button
 calcBtn.addEventListener("click", calcWeight);
 
-// runs calcWeight when Enter is pressed when input field is active
+// runs calcWeight when Enter is pressed and input field is in focus
 weightInput.addEventListener("keypress", function (event) {
   if (event.key === "Enter") {
     calcWeight();
   }
 });
 
+// scrolls page to planet cards
 function scrollToCards() {
   mainWrapper.scrollIntoView({
     block: "start",
