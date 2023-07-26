@@ -33,7 +33,7 @@ for (let planet of planets) {
   planetText.textContent = `Your weight on ${planet.name} would be`;
 
   const planetWeight = document.createElement("h3");
-  planetWeight.dataset.gravity = `${planet.gravity}`;
+  planetWeight.dataset.gravity = planet.gravity;
   planetWeight.textContent = 0.0;
 
   card.append(planetImg, planetTitle, planetText, planetWeight);
@@ -42,13 +42,10 @@ for (let planet of planets) {
 
 // prevents user to input number outside the set min/max
 weightInput.oninput = function () {
-  const max = parseInt(this.max);
-  const min = parseInt(this.min);
-
-  if (this.value < min) {
-    this.value = min;
-  } else if (this.value > max) {
-    this.value = max;
+  if (this.value < this.min) {
+    this.value = this.min;
+  } else if (this.value > this.max) {
+    this.value = this.max;
   }
 
   // prevents input to exceed maxlength
@@ -63,10 +60,8 @@ function calcWeight() {
 
   weightOutput.forEach((h3) => {
     const gravityMultiplier = h3.getAttribute("data-gravity");
+    h3.textContent = (weightInput.value * gravityMultiplier).toFixed(2);
 
-    const planetWeight = weightInput.value * gravityMultiplier;
-
-    h3.textContent = `${planetWeight.toFixed(2)}`;
     weightInput.blur();
     scrollToCards();
   });
@@ -83,8 +78,7 @@ weightInput.addEventListener("keypress", function (event) {
 });
 
 function scrollToCards() {
-  const element = document.querySelector("main");
-  element.scrollIntoView({
+  mainWrapper.scrollIntoView({
     block: "start",
     behavior: "smooth",
     inline: "start",
