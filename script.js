@@ -17,6 +17,7 @@ const planets = [
   { name: "Pluto", gravity: 0.06, imgName: "pluto" },
 ];
 
+// creates planet cards
 for (let planet of planets) {
   const card = document.createElement("div");
   card.classList.add("card");
@@ -66,6 +67,7 @@ function calcWeight() {
     const planetWeight = weightInput.value * gravityMultiplier;
 
     h3.textContent = `${planetWeight.toFixed(2)}`;
+    weightInput.blur();
     scrollToCards();
   });
 }
