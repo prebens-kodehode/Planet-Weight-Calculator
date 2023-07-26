@@ -60,12 +60,13 @@ function calcWeight() {
     h3.textContent = (
       weightInput.value * h3.getAttribute("data-gravity")
     ).toFixed(2);
-
-    // removes focus from input field
-    weightInput.blur();
-
-    scrollToCards();
   });
+  // removes focus from input field
+  weightInput.blur();
+
+  setTimeout(() => {
+    scrollToCards();
+  }, 150);
 }
 
 // runs calcWeight when button
