@@ -67,8 +67,8 @@ function calcWeight() {
     const planetWeight = weightInput.value * gravityMultiplier;
 
     h3.textContent = `${planetWeight.toFixed(2)}`;
+    weightInput.blur();
     scrollToCards();
-    // weightInput.blur();
   });
 }
 
