@@ -92,7 +92,13 @@ main {
   filter: drop-shadow(0 0.3rem 0.5rem hsla(0, 100%, 100%, 0.301));
 }
 
+.card p {
+  width: 12.3rem;
+  margin: 0;
+}
+
 .card h2 {
+  font-size: 1.3rem;
   text-transform: uppercase;
 }
 
@@ -102,11 +108,6 @@ footer {
 }
 
 /* collections */
-.card p {
-  width: 12.3rem;
-  margin: 0;
-}
-
 .card p,
 button,
 input,
