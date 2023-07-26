@@ -26,7 +26,7 @@ for (let planet of planets) {
   planetImg.src = `./Images/${planet.imgName}.webp`;
   planetImg.alt = `close up photo of ${planet.name}`;
 
-  const planetTitle = document.createElement("h3");
+  const planetTitle = document.createElement("h2");
   planetTitle.textContent = planet.name;
 
   const planetText = document.createElement("p");

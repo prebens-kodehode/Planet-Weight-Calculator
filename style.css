@@ -67,8 +67,8 @@ button:active {
 
 /* main section */
 main img {
-  max-width: 15rem;
-  max-height: 15rem;
+  width: 15rem;
+  height: 15rem;
   border-radius: 0.5rem;
 }
 
@@ -92,7 +92,7 @@ main {
   filter: drop-shadow(0 0.3rem 0.5rem hsla(0, 100%, 100%, 0.301));
 }
 
-.card h3 {
+.card h2 {
   text-transform: uppercase;
 }
 
@@ -115,6 +115,7 @@ footer {
   text-align: center;
 }
 
+h2,
 h3,
 p,
 button {
