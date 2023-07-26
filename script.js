@@ -68,7 +68,7 @@ function calcWeight() {
 
     h3.textContent = `${planetWeight.toFixed(2)}`;
     scrollToCards();
-    weightInput.blur();
+    // weightInput.blur();
   });
 }
 
@@ -77,7 +77,7 @@ calcBtn.addEventListener("click", calcWeight);
 
 // runs calcWeight when Enter is pressed when input field is active
 weightInput.addEventListener("keypress", function (event) {
-  if (event.key === "Enter") {
+  if (event.key === "Enter" && event.key === "Return") {
     calcWeight();
   }
 });
