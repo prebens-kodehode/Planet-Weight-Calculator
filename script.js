@@ -34,7 +34,7 @@ for (let planet of planets) {
 
   const planetWeight = document.createElement("h3");
   planetWeight.dataset.gravity = planet.gravity;
-  planetWeight.textContent = 0.0;
+  planetWeight.textContent = 0;
 
   card.append(planetImg, planetTitle, planetText, planetWeight);
   mainWrapper.append(card);
@@ -54,7 +54,7 @@ weightInput.oninput = function () {
   }
 };
 
-// calculates the weights
+// calculates the weights and updates card text content
 function calcWeight() {
   document.querySelectorAll("h3").forEach((h3) => {
     h3.textContent = (
@@ -64,12 +64,13 @@ function calcWeight() {
   // removes focus from input field
   weightInput.blur();
 
+  // auto scroll delay
   setTimeout(() => {
     scrollToCards();
   }, 150);
 }
 
-// runs calcWeight when button
+// runs calcWeight when button is clicked
 calcBtn.addEventListener("click", calcWeight);
 
 // runs calcWeight when Enter is pressed and input field is in focus
