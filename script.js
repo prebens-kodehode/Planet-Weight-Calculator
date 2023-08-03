@@ -67,7 +67,7 @@ function calcWeight() {
   // auto scroll delay
   setTimeout(() => {
     scrollToCards();
-  }, 150);
+  }, 250);
 }
 
 // runs calcWeight when button is clicked
